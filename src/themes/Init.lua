@@ -73,12 +73,13 @@ return function(WindUI, Creator)
 			-- Dark solid panel/element backgrounds make gradient buttons POP
 
 			Background = WindUI:Gradient({
-				["0"]   = { Color = Color3.fromHex("#000d33"), Transparency = 0 },
-				["25"]  = { Color = Color3.fromHex("#0033aa"), Transparency = 0 },
-				["50"]  = { Color = Color3.fromHex("#0066cc"), Transparency = 0 },
-				["75"]  = { Color = Color3.fromHex("#0099dd"), Transparency = 0 },
-				["100"] = { Color = Color3.fromHex("#00ccee"), Transparency = 0 },
-			}, { Rotation = 90 }),
+				["0"]   = { Color = Color3.fromHex("#001a55"), Transparency = 0 },  -- Dark Blue
+				["18"]  = { Color = Color3.fromHex("#0055cc"), Transparency = 0 },  -- Blue
+				["36"]  = { Color = Color3.fromHex("#0099dd"), Transparency = 0 },  -- Ocean Blue
+				["54"]  = { Color = Color3.fromHex("#aaddff"), Transparency = 0 },  -- White Blue
+				["72"]  = { Color = Color3.fromHex("#ddf4ff"), Transparency = 0 },  -- Near White
+				["100"] = { Color = Color3.fromHex("#003388"), Transparency = 0 },  -- Deep Blue
+			}, { Rotation = 135 }),
 
 			Accent = WindUI:Gradient({
 				["0"]   = { Color = Color3.fromHex("#0044ff"), Transparency = 0 },
