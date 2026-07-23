@@ -57,82 +57,55 @@ return function(WindUI, Creator)
 
 		Leviathan = {
 			Name = "Leviathan",
-
-			-- 6-colour spectrum: Dark Blue → Blue → Deep Ocean → Ocean →
-			--                    White-Blue → Near-White, rotation 135°
-			-- Every key uses the full palette at different rotations
-			-- so elements contrast and mix visually across the whole UI.
-
 			Background = WindUI:Gradient({
-				["0"]   = { Color = Color3.fromHex("#001a55"), Transparency = 0 }, -- Dark Blue
-				["17"]  = { Color = Color3.fromHex("#0033aa"), Transparency = 0 }, -- Blue
-				["34"]  = { Color = Color3.fromHex("#0066cc"), Transparency = 0 }, -- Deep Ocean
-				["51"]  = { Color = Color3.fromHex("#0099dd"), Transparency = 0 }, -- Ocean
-				["68"]  = { Color = Color3.fromHex("#aaddff"), Transparency = 0 }, -- White-Blue
-				["84"]  = { Color = Color3.fromHex("#ddf4ff"), Transparency = 0 }, -- Near White
-				["100"] = { Color = Color3.fromHex("#003388"), Transparency = 0 }, -- Deep Blue
-			}, { Rotation = 135 }),
-
-			Accent = WindUI:Gradient({
-				["0"]   = { Color = Color3.fromHex("#000d33"), Transparency = 0 }, -- Dark Blue
-				["20"]  = { Color = Color3.fromHex("#0044cc"), Transparency = 0 }, -- Blue
-				["40"]  = { Color = Color3.fromHex("#0088dd"), Transparency = 0 }, -- Ocean
-				["60"]  = { Color = Color3.fromHex("#00bbff"), Transparency = 0 }, -- Cyan
-				["80"]  = { Color = Color3.fromHex("#88ddff"), Transparency = 0 }, -- White-Blue
-				["100"] = { Color = Color3.fromHex("#002266"), Transparency = 0 }, -- Deep Blue
-			}, { Rotation = 45 }),
-
-			Dialog = WindUI:Gradient({
-				["0"]   = { Color = Color3.fromHex("#001133"), Transparency = 0 },
-				["25"]  = { Color = Color3.fromHex("#003399"), Transparency = 0 },
-				["50"]  = { Color = Color3.fromHex("#0077cc"), Transparency = 0 },
-				["75"]  = { Color = Color3.fromHex("#55aaee"), Transparency = 0 },
-				["100"] = { Color = Color3.fromHex("#bbddff"), Transparency = 0 },
-			}, { Rotation = 90 }),
-
-			-- Button: dark→ocean→white-blue — full 6-stop like Rainbow's Button
-			Button = WindUI:Gradient({
-				["0"]   = { Color = Color3.fromHex("#001a55"), Transparency = 0 }, -- Dark Blue
-				["20"]  = { Color = Color3.fromHex("#0044cc"), Transparency = 0 }, -- Blue
-				["40"]  = { Color = Color3.fromHex("#0088ee"), Transparency = 0 }, -- Ocean
-				["60"]  = { Color = Color3.fromHex("#00bbff"), Transparency = 0 }, -- Cyan
-				["80"]  = { Color = Color3.fromHex("#88ddff"), Transparency = 0 }, -- White-Blue
-				["100"] = { Color = Color3.fromHex("#ddf4ff"), Transparency = 0 }, -- Near White
-			}, { Rotation = 60 }),
-
-			Toggle = WindUI:Gradient({
-				["0"]   = { Color = Color3.fromHex("#0033aa"), Transparency = 0 },
-				["33"]  = { Color = Color3.fromHex("#0077ee"), Transparency = 0 },
-				["66"]  = { Color = Color3.fromHex("#00ccff"), Transparency = 0 },
-				["100"] = { Color = Color3.fromHex("#aaeeff"), Transparency = 0 },
-			}, { Rotation = 45 }),
-
-			Slider = WindUI:Gradient({
 				["0"]   = { Color = Color3.fromHex("#001a55"), Transparency = 0 },
-				["50"]  = { Color = Color3.fromHex("#0077dd"), Transparency = 0 },
-				["100"] = { Color = Color3.fromHex("#00ddff"), Transparency = 0 },
-			}, { Rotation = 0 }),
-
-			Checkbox = WindUI:Gradient({
-				["0"]   = { Color = Color3.fromHex("#0044cc"), Transparency = 0 },
-				["100"] = { Color = Color3.fromHex("#00eeff"), Transparency = 0 },
+				["17"]  = { Color = Color3.fromHex("#0033aa"), Transparency = 0 },
+				["34"]  = { Color = Color3.fromHex("#0066cc"), Transparency = 0 },
+				["51"]  = { Color = Color3.fromHex("#0099dd"), Transparency = 0 },
+				["68"]  = { Color = Color3.fromHex("#aaddff"), Transparency = 0 },
+				["84"]  = { Color = Color3.fromHex("#ddf4ff"), Transparency = 0 },
+				["100"] = { Color = Color3.fromHex("#003388"), Transparency = 0 },
+			}, { Rotation = 135 }),
+			Accent = WindUI:Gradient({
+				["0"]   = { Color = Color3.fromHex("#000d33"), Transparency = 0 },
+				["20"]  = { Color = Color3.fromHex("#0044cc"), Transparency = 0 },
+				["40"]  = { Color = Color3.fromHex("#0088dd"), Transparency = 0 },
+				["60"]  = { Color = Color3.fromHex("#00bbff"), Transparency = 0 },
+				["80"]  = { Color = Color3.fromHex("#88ddff"), Transparency = 0 },
+				["100"] = { Color = Color3.fromHex("#002266"), Transparency = 0 },
 			}, { Rotation = 45 }),
-
-			Text        = Color3.fromHex("#e8f6ff"),
+			Dialog = Color3.fromHex("#001133"),
+			Text = Color3.fromHex("#e8f6ff"),
 			Placeholder = Color3.fromHex("#55aadd"),
-			Icon        = Color3.fromHex("#ffffff"),
-
-			-- Dark solid backgrounds → gradients POP (same as Holographic)
-			ElementBackground             = WindUI:Gradient({
+			Button = WindUI:Gradient({
+				["0"]   = { Color = Color3.fromHex("#001a55"), Transparency = 0 },
+				["20"]  = { Color = Color3.fromHex("#0044cc"), Transparency = 0 },
+				["40"]  = { Color = Color3.fromHex("#0088ee"), Transparency = 0 },
+				["60"]  = { Color = Color3.fromHex("#00bbff"), Transparency = 0 },
+				["80"]  = { Color = Color3.fromHex("#88ddff"), Transparency = 0 },
+				["100"] = { Color = Color3.fromHex("#ddf4ff"), Transparency = 0 },
+			}, { Rotation = 60 }),
+			Icon = Color3.fromHex("#ffffff"),
+			Toggle = WindUI:Gradient({ 
+				["0"] = { Color = Color3.fromHex("#0033aa"), Transparency = 0 }, 
+				["100"] = { Color = Color3.fromHex("#aaeeff"), Transparency = 0 } 
+			}, { Rotation = 45 }),
+			Slider = WindUI:Gradient({ 
+				["0"] = { Color = Color3.fromHex("#001a55"), Transparency = 0 }, 
+				["100"] = { Color = Color3.fromHex("#00ddff"), Transparency = 0 } 
+			}, { Rotation = 45 }),
+			Checkbox = WindUI:Gradient({ 
+				["0"] = { Color = Color3.fromHex("#0044cc"), Transparency = 0 }, 
+				["100"] = { Color = Color3.fromHex("#00eeff"), Transparency = 0 } 
+			}, { Rotation = 45 }),
+			ElementBackground = WindUI:Gradient({
 				["0"]   = { Color = Color3.fromHex("#000a1f"), Transparency = 0 },
 				["100"] = { Color = Color3.fromHex("#00152e"), Transparency = 0 },
-			}, { Rotation = 135 }),
+			}, { Rotation = 90 }),
 			ElementBackgroundTransparency = 0,
-
-			PanelBackground             = Color3.fromHex("#00050e"),
+			PanelBackground = Color3.fromHex("#00050e"),
 			PanelBackgroundTransparency = 0,
 		},
-
 		-- ════════════════════════════════════════════════════════════════
 		--  RAINBOW — Wind UI source verbatim
 		-- ════════════════════════════════════════════════════════════════
