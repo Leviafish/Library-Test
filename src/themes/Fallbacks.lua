@@ -1,7 +1,3 @@
--- Leviathan UI — Fallbacks
--- Synced with Wind UI fallback chain.
--- Only override here when Leviathan intentionally differs from Wind.
-
 return function(Creator)
 	return {
 		Primary  = "Button",
@@ -9,9 +5,9 @@ return function(Creator)
 		Black    = Color3.new(0, 0, 0),
 		SubText  = "Text",
 
-		Dialog   = "Accent",
+		Dialog   = Color3.fromHex("#1E1E1E"),
 
-		Background                = "Accent",
+		Background                = Color3.fromHex("#141414"),
 		BackgroundTransparency    = 0,
 		Hover                     = "Text",
 
@@ -29,7 +25,6 @@ return function(Creator)
 		WindowTopbarButtonIcon    = "Icon",
 		WindowSearchBarBackground = "Dialog",
 
-		-- Tabs: same as Wind — TabBackground → Hover → Text (white, high transparency)
 		TabBackground                   = "Hover",
 		TabBackgroundHover              = "Hover",
 		TabBackgroundHoverTransparency  = 0.97,
@@ -46,7 +41,6 @@ return function(Creator)
 		TabBorderTransparencyActive     = 0.75,
 		TabBorder                       = "White",
 
-		-- Elements: same as Wind
 		ElementBackground             = "Text",
 		ElementBackgroundTransparency = 0.93,
 		ElementTitle                  = "Text",
@@ -65,7 +59,6 @@ return function(Creator)
 		DialogContent                = "Text",
 		DialogIcon                   = "Icon",
 
-		-- Toggle / Checkbox / Slider → Button (theme accent)
 		Toggle    = "Button",
 		ToggleBar = "White",
 
@@ -105,7 +98,6 @@ return function(Creator)
 		SearchBarBorder              = "White",
 		SearchBarBorderTransparency  = 0.75,
 
-		-- Notifications — Wind default (duration = White, almost invisible bar)
 		Notification                     = "Background",
 		Notification2                    = "White",
 		Notification2Transparency        = 0.92,
