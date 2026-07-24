@@ -1,5 +1,10 @@
 return function(WindUI, Creator)
 	return {
+
+		-- ════════════════════════════════════════════════════════════════
+		--  CORE
+		-- ════════════════════════════════════════════════════════════════
+
 		Dark = {
 			Name = "Dark",
 			Background  = Color3.fromHex("#0e0e10"),
@@ -46,51 +51,103 @@ return function(WindUI, Creator)
 			DropdownBackground = Color3.fromHex("#ffffff"),
 		},
 
+		-- ════════════════════════════════════════════════════════════════
+		--  LEVIATHAN — SUPER UPGRADED (6-colour full-spectrum mixing)
+		-- ════════════════════════════════════════════════════════════════
+
 		Leviathan = {
 			Name = "Leviathan",
+
+			-- 6-colour spectrum: Dark Blue → Blue → Deep Ocean → Ocean →
+			--                    White-Blue → Near-White, rotation 135°
+			-- Every key uses the full palette at different rotations
+			-- so elements contrast and mix visually across the whole UI.
+
 			Background = WindUI:Gradient({
-				["0"]   = { Color = Color3.fromHex("#00020a"), Transparency = 0 },
-				["50"]  = { Color = Color3.fromHex("#000a20"), Transparency = 0 },
-				["100"] = { Color = Color3.fromHex("#001533"), Transparency = 0 },
+				["0"]   = { Color = Color3.fromHex("#001a55"), Transparency = 0 }, -- Dark Blue
+				["17"]  = { Color = Color3.fromHex("#0033aa"), Transparency = 0 }, -- Blue
+				["34"]  = { Color = Color3.fromHex("#0066cc"), Transparency = 0 }, -- Deep Ocean
+				["51"]  = { Color = Color3.fromHex("#0099dd"), Transparency = 0 }, -- Ocean
+				["68"]  = { Color = Color3.fromHex("#aaddff"), Transparency = 0 }, -- White-Blue
+				["84"]  = { Color = Color3.fromHex("#ddf4ff"), Transparency = 0 }, -- Near White
+				["100"] = { Color = Color3.fromHex("#003388"), Transparency = 0 }, -- Deep Blue
 			}, { Rotation = 135 }),
+
 			Accent = WindUI:Gradient({
-				["0"]   = { Color = Color3.fromHex("#002266"), Transparency = 0 },
-				["100"] = { Color = Color3.fromHex("#0044aa"), Transparency = 0 },
+				["0"]   = { Color = Color3.fromHex("#000d33"), Transparency = 0 }, -- Dark Blue
+				["20"]  = { Color = Color3.fromHex("#0044cc"), Transparency = 0 }, -- Blue
+				["40"]  = { Color = Color3.fromHex("#0088dd"), Transparency = 0 }, -- Ocean
+				["60"]  = { Color = Color3.fromHex("#00bbff"), Transparency = 0 }, -- Cyan
+				["80"]  = { Color = Color3.fromHex("#88ddff"), Transparency = 0 }, -- White-Blue
+				["100"] = { Color = Color3.fromHex("#002266"), Transparency = 0 }, -- Deep Blue
 			}, { Rotation = 45 }),
-			Dialog = Color3.fromHex("#00081a"),
-			Text = Color3.fromHex("#cce6ff"),
-			Placeholder = Color3.fromHex("#336699"),
+
+			Dialog = WindUI:Gradient({
+				["0"]   = { Color = Color3.fromHex("#001133"), Transparency = 0 },
+				["25"]  = { Color = Color3.fromHex("#003399"), Transparency = 0 },
+				["50"]  = { Color = Color3.fromHex("#0077cc"), Transparency = 0 },
+				["75"]  = { Color = Color3.fromHex("#55aaee"), Transparency = 0 },
+				["100"] = { Color = Color3.fromHex("#bbddff"), Transparency = 0 },
+			}, { Rotation = 90 }),
+
+			-- Button: dark→ocean→white-blue — full 6-stop like Rainbow's Button
 			Button = WindUI:Gradient({
-				["0"]   = { Color = Color3.fromHex("#001a4d"), Transparency = 0 },
-				["100"] = { Color = Color3.fromHex("#003380"), Transparency = 0 },
+				["0"]   = { Color = Color3.fromHex("#001a55"), Transparency = 0 }, -- Dark Blue
+				["20"]  = { Color = Color3.fromHex("#0044cc"), Transparency = 0 }, -- Blue
+				["40"]  = { Color = Color3.fromHex("#0088ee"), Transparency = 0 }, -- Ocean
+				["60"]  = { Color = Color3.fromHex("#00bbff"), Transparency = 0 }, -- Cyan
+				["80"]  = { Color = Color3.fromHex("#88ddff"), Transparency = 0 }, -- White-Blue
+				["100"] = { Color = Color3.fromHex("#ddf4ff"), Transparency = 0 }, -- Near White
+			}, { Rotation = 60 }),
+
+			Toggle = WindUI:Gradient({
+				["0"]   = { Color = Color3.fromHex("#0033aa"), Transparency = 0 },
+				["33"]  = { Color = Color3.fromHex("#0077ee"), Transparency = 0 },
+				["66"]  = { Color = Color3.fromHex("#00ccff"), Transparency = 0 },
+				["100"] = { Color = Color3.fromHex("#aaeeff"), Transparency = 0 },
 			}, { Rotation = 45 }),
-			Icon = Color3.fromHex("#66b3ff"),
-			Toggle = WindUI:Gradient({ 
-				["0"] = { Color = Color3.fromHex("#0044aa"), Transparency = 0 }, 
-				["100"] = { Color = Color3.fromHex("#0066cc"), Transparency = 0 } 
+
+			Slider = WindUI:Gradient({
+				["0"]   = { Color = Color3.fromHex("#001a55"), Transparency = 0 },
+				["50"]  = { Color = Color3.fromHex("#0077dd"), Transparency = 0 },
+				["100"] = { Color = Color3.fromHex("#00ddff"), Transparency = 0 },
+			}, { Rotation = 0 }),
+
+			Checkbox = WindUI:Gradient({
+				["0"]   = { Color = Color3.fromHex("#0044cc"), Transparency = 0 },
+				["100"] = { Color = Color3.fromHex("#00eeff"), Transparency = 0 },
 			}, { Rotation = 45 }),
-			Slider = WindUI:Gradient({ 
-				["0"] = { Color = Color3.fromHex("#003380"), Transparency = 0 }, 
-				["100"] = { Color = Color3.fromHex("#0055b3"), Transparency = 0 } 
-			}, { Rotation = 45 }),
-			Checkbox = WindUI:Gradient({ 
-				["0"] = { Color = Color3.fromHex("#0044aa"), Transparency = 0 }, 
-				["100"] = { Color = Color3.fromHex("#0066cc"), Transparency = 0 } 
-			}, { Rotation = 45 }),
-			ElementBackground = Color3.fromHex("#000a1f"),
-			ElementBackgroundTransparency = 0.3,
-			PanelBackground = Color3.fromHex("#00020a"),
-			PanelBackgroundTransparency = 0.9,
+
+			Text        = Color3.fromHex("#e8f6ff"),
+			Placeholder = Color3.fromHex("#55aadd"),
+			Icon        = Color3.fromHex("#ffffff"),
+
+			-- Panels fully transparent → Background gradient bleeds through entire UI
+			-- Cards get a subtle dark tint so content stays readable
+			ElementBackground             = Color3.fromHex("#000d22"),
+			ElementBackgroundTransparency = 0.35,
+
+			PanelBackgroundTransparency = 1,
 		},
+
+		-- ════════════════════════════════════════════════════════════════
+		--  RAINBOW — Wind UI source verbatim
+		-- ════════════════════════════════════════════════════════════════
 
 		Rainbow = {
 			Name = "Rainbow",
+
+			-- Panel fully transparent → rainbow Window Background shows through entire UI
+			PanelBackgroundTransparency = 1,
+			ElementBackgroundTransparency = 1,
+
 			Accent = WindUI:Gradient({
 				["0"]   = { Color = Color3.fromHex("#00ff41"), Transparency = 0 },
 				["33"]  = { Color = Color3.fromHex("#00ffff"), Transparency = 0 },
 				["66"]  = { Color = Color3.fromHex("#0080ff"), Transparency = 0 },
 				["100"] = { Color = Color3.fromHex("#8000ff"), Transparency = 0 },
 			}, { Rotation = 45 }),
+
 			Dialog = WindUI:Gradient({
 				["0"]   = { Color = Color3.fromHex("#ff0080"), Transparency = 0 },
 				["25"]  = { Color = Color3.fromHex("#8000ff"), Transparency = 0 },
@@ -98,8 +155,10 @@ return function(WindUI, Creator)
 				["75"]  = { Color = Color3.fromHex("#00ff80"), Transparency = 0 },
 				["100"] = { Color = Color3.fromHex("#ff8000"), Transparency = 0 },
 			}, { Rotation = 135 }),
+
 			Text        = Color3.fromHex("#ffffff"),
 			Placeholder = Color3.fromHex("#00ff80"),
+
 			Background = WindUI:Gradient({
 				["0"]   = { Color = Color3.fromHex("#ff0040"), Transparency = 0 },
 				["20"]  = { Color = Color3.fromHex("#ff4000"), Transparency = 0 },
@@ -108,6 +167,7 @@ return function(WindUI, Creator)
 				["80"]  = { Color = Color3.fromHex("#0040ff"), Transparency = 0 },
 				["100"] = { Color = Color3.fromHex("#4000ff"), Transparency = 0 },
 			}, { Rotation = 90 }),
+
 			Button = WindUI:Gradient({
 				["0"]   = { Color = Color3.fromHex("#ff0080"), Transparency = 0 },
 				["25"]  = { Color = Color3.fromHex("#ff8000"), Transparency = 0 },
@@ -115,12 +175,13 @@ return function(WindUI, Creator)
 				["75"]  = { Color = Color3.fromHex("#80ff00"), Transparency = 0 },
 				["100"] = { Color = Color3.fromHex("#00ffff"), Transparency = 0 },
 			}, { Rotation = 60 }),
+
 			Icon = Color3.fromHex("#ffffff"),
-			ElementBackground             = Color3.fromHex("#1a1a1a"),
-			ElementBackgroundTransparency = 0.3,
-			PanelBackground             = Color3.fromHex("#000000"),
-			PanelBackgroundTransparency = 0.9,
 		},
+
+		-- ════════════════════════════════════════════════════════════════
+		--  GRADIENT THEMES (full structure like Holographic)
+		-- ════════════════════════════════════════════════════════════════
 
 		Holographic = {
 			Name = "Holographic",
@@ -149,10 +210,10 @@ return function(WindUI, Creator)
 			Toggle   = WindUI:Gradient({ ["0"] = { Color = Color3.fromHex("#00ffcc"), Transparency = 0 }, ["100"] = { Color = Color3.fromHex("#ff00ff"), Transparency = 0 } }, { Rotation = 45 }),
 			Slider   = WindUI:Gradient({ ["0"] = { Color = Color3.fromHex("#ff00aa"), Transparency = 0 }, ["100"] = { Color = Color3.fromHex("#00ffff"), Transparency = 0 } }, { Rotation = 45 }),
 			Checkbox = WindUI:Gradient({ ["0"] = { Color = Color3.fromHex("#00ffff"), Transparency = 0 }, ["100"] = { Color = Color3.fromHex("#ff00ff"), Transparency = 0 } }, { Rotation = 45 }),
-			ElementBackground             = Color3.fromHex("#0c0015"),
-			ElementBackgroundTransparency = 0.3,
+			ElementBackground             = WindUI:Gradient({ ["0"] = { Color = Color3.fromHex("#0c0015"), Transparency = 0 }, ["100"] = { Color = Color3.fromHex("#001414"), Transparency = 0 } }, { Rotation = 90 }),
+			ElementBackgroundTransparency = 0,
 			PanelBackground             = Color3.fromHex("#090012"),
-			PanelBackgroundTransparency = 0.9,
+			PanelBackgroundTransparency = 0,
 		},
 
 		Cosmos = {
@@ -181,9 +242,9 @@ return function(WindUI, Creator)
 			Slider   = WindUI:Gradient({ ["0"] = { Color = Color3.fromHex("#5500ee"), Transparency = 0 }, ["100"] = { Color = Color3.fromHex("#aa44ff"), Transparency = 0 } }, { Rotation = 45 }),
 			Checkbox = WindUI:Gradient({ ["0"] = { Color = Color3.fromHex("#8844ff"), Transparency = 0 }, ["100"] = { Color = Color3.fromHex("#cc55ff"), Transparency = 0 } }, { Rotation = 45 }),
 			ElementBackground             = Color3.fromHex("#0a0018"),
-			ElementBackgroundTransparency = 0.3,
+			ElementBackgroundTransparency = 0,
 			PanelBackground             = Color3.fromHex("#060010"),
-			PanelBackgroundTransparency = 0.9,
+			PanelBackgroundTransparency = 0,
 		},
 
 		Cyberpunk = {
@@ -211,9 +272,9 @@ return function(WindUI, Creator)
 			Slider   = WindUI:Gradient({ ["0"] = { Color = Color3.fromHex("#ff00aa"), Transparency = 0 }, ["100"] = { Color = Color3.fromHex("#00cccc"), Transparency = 0 } }, { Rotation = 45 }),
 			Checkbox = WindUI:Gradient({ ["0"] = { Color = Color3.fromHex("#00ffee"), Transparency = 0 }, ["100"] = { Color = Color3.fromHex("#ff00aa"), Transparency = 0 } }, { Rotation = 45 }),
 			ElementBackground             = Color3.fromHex("#0d0d22"),
-			ElementBackgroundTransparency = 0.3,
+			ElementBackgroundTransparency = 0,
 			PanelBackground             = Color3.fromHex("#0a0a16"),
-			PanelBackgroundTransparency = 0.9,
+			PanelBackgroundTransparency = 0,
 		},
 
 		NeonCity = {
@@ -241,9 +302,9 @@ return function(WindUI, Creator)
 			Slider   = WindUI:Gradient({ ["0"] = { Color = Color3.fromHex("#ff00aa"), Transparency = 0 }, ["100"] = { Color = Color3.fromHex("#aa00ff"), Transparency = 0 } }, { Rotation = 45 }),
 			Checkbox = WindUI:Gradient({ ["0"] = { Color = Color3.fromHex("#ff00aa"), Transparency = 0 }, ["100"] = { Color = Color3.fromHex("#00ffcc"), Transparency = 0 } }, { Rotation = 45 }),
 			ElementBackground             = Color3.fromHex("#0d0d1a"),
-			ElementBackgroundTransparency = 0.3,
+			ElementBackgroundTransparency = 0,
 			PanelBackground             = Color3.fromHex("#0a0a16"),
-			PanelBackgroundTransparency = 0.9,
+			PanelBackgroundTransparency = 0,
 		},
 
 		Sunset = {
@@ -271,9 +332,9 @@ return function(WindUI, Creator)
 			Slider   = WindUI:Gradient({ ["0"] = { Color = Color3.fromHex("#ee4400"), Transparency = 0 }, ["100"] = { Color = Color3.fromHex("#ee9900"), Transparency = 0 } }, { Rotation = 45 }),
 			Checkbox = WindUI:Gradient({ ["0"] = { Color = Color3.fromHex("#ff5500"), Transparency = 0 }, ["100"] = { Color = Color3.fromHex("#ffaa00"), Transparency = 0 } }, { Rotation = 45 }),
 			ElementBackground             = Color3.fromHex("#200a08"),
-			ElementBackgroundTransparency = 0.3,
+			ElementBackgroundTransparency = 0,
 			PanelBackground             = Color3.fromHex("#140606"),
-			PanelBackgroundTransparency = 0.9,
+			PanelBackgroundTransparency = 0,
 		},
 
 		Lava = {
@@ -296,9 +357,9 @@ return function(WindUI, Creator)
 			Slider   = WindUI:Gradient({ ["0"] = { Color = Color3.fromHex("#cc3300"), Transparency = 0 }, ["100"] = { Color = Color3.fromHex("#ff5500"), Transparency = 0 } }, { Rotation = 45 }),
 			Checkbox = WindUI:Gradient({ ["0"] = { Color = Color3.fromHex("#ff4400"), Transparency = 0 }, ["100"] = { Color = Color3.fromHex("#ff8800"), Transparency = 0 } }, { Rotation = 45 }),
 			ElementBackground             = Color3.fromHex("#1a0900"),
-			ElementBackgroundTransparency = 0.3,
+			ElementBackgroundTransparency = 0,
 			PanelBackground             = Color3.fromHex("#0d0400"),
-			PanelBackgroundTransparency = 0.9,
+			PanelBackgroundTransparency = 0,
 		},
 
 		Toxic = {
@@ -324,9 +385,9 @@ return function(WindUI, Creator)
 			Slider   = WindUI:Gradient({ ["0"] = { Color = Color3.fromHex("#55cc00"), Transparency = 0 }, ["100"] = { Color = Color3.fromHex("#88ee00"), Transparency = 0 } }, { Rotation = 45 }),
 			Checkbox = WindUI:Gradient({ ["0"] = { Color = Color3.fromHex("#66ee00"), Transparency = 0 }, ["100"] = { Color = Color3.fromHex("#aaff00"), Transparency = 0 } }, { Rotation = 45 }),
 			ElementBackground             = Color3.fromHex("#071000"),
-			ElementBackgroundTransparency = 0.3,
+			ElementBackgroundTransparency = 0,
 			PanelBackground             = Color3.fromHex("#040a00"),
-			PanelBackgroundTransparency = 0.9,
+			PanelBackgroundTransparency = 0,
 		},
 
 		Blood = {
@@ -349,9 +410,9 @@ return function(WindUI, Creator)
 			Slider   = WindUI:Gradient({ ["0"] = { Color = Color3.fromHex("#aa0000"), Transparency = 0 }, ["100"] = { Color = Color3.fromHex("#cc1111"), Transparency = 0 } }, { Rotation = 45 }),
 			Checkbox = WindUI:Gradient({ ["0"] = { Color = Color3.fromHex("#cc1111"), Transparency = 0 }, ["100"] = { Color = Color3.fromHex("#ee3333"), Transparency = 0 } }, { Rotation = 45 }),
 			ElementBackground             = Color3.fromHex("#0e0000"),
-			ElementBackgroundTransparency = 0.3,
+			ElementBackgroundTransparency = 0,
 			PanelBackground             = Color3.fromHex("#0a0000"),
-			PanelBackgroundTransparency = 0.9,
+			PanelBackgroundTransparency = 0,
 		},
 
 		Ocean = {
@@ -377,9 +438,9 @@ return function(WindUI, Creator)
 			Slider   = WindUI:Gradient({ ["0"] = { Color = Color3.fromHex("#0e4d99"), Transparency = 0 }, ["100"] = { Color = Color3.fromHex("#0099bb"), Transparency = 0 } }, { Rotation = 45 }),
 			Checkbox = WindUI:Gradient({ ["0"] = { Color = Color3.fromHex("#0e4d99"), Transparency = 0 }, ["100"] = { Color = Color3.fromHex("#0099bb"), Transparency = 0 } }, { Rotation = 45 }),
 			ElementBackground             = Color3.fromHex("#051526"),
-			ElementBackgroundTransparency = 0.3,
+			ElementBackgroundTransparency = 0,
 			PanelBackground             = Color3.fromHex("#010d1a"),
-			PanelBackgroundTransparency = 0.9,
+			PanelBackgroundTransparency = 0,
 		},
 
 		Forest = {
@@ -405,9 +466,9 @@ return function(WindUI, Creator)
 			Slider   = WindUI:Gradient({ ["0"] = { Color = Color3.fromHex("#1d8833"), Transparency = 0 }, ["100"] = { Color = Color3.fromHex("#33aa44"), Transparency = 0 } }, { Rotation = 45 }),
 			Checkbox = WindUI:Gradient({ ["0"] = { Color = Color3.fromHex("#33bb55"), Transparency = 0 }, ["100"] = { Color = Color3.fromHex("#44dd66"), Transparency = 0 } }, { Rotation = 45 }),
 			ElementBackground             = Color3.fromHex("#081408"),
-			ElementBackgroundTransparency = 0.3,
+			ElementBackgroundTransparency = 0,
 			PanelBackground             = Color3.fromHex("#050e06"),
-			PanelBackgroundTransparency = 0.9,
+			PanelBackgroundTransparency = 0,
 		},
 
 		Matrix = {
@@ -430,9 +491,9 @@ return function(WindUI, Creator)
 			Slider   = WindUI:Gradient({ ["0"] = { Color = Color3.fromHex("#006622"), Transparency = 0 }, ["100"] = { Color = Color3.fromHex("#00CC33"), Transparency = 0 } }, { Rotation = 45 }),
 			Checkbox = WindUI:Gradient({ ["0"] = { Color = Color3.fromHex("#00aa33"), Transparency = 0 }, ["100"] = { Color = Color3.fromHex("#00FF41"), Transparency = 0 } }, { Rotation = 45 }),
 			ElementBackground             = Color3.fromHex("#001A00"),
-			ElementBackgroundTransparency = 0.3,
+			ElementBackgroundTransparency = 0,
 			PanelBackground             = Color3.fromHex("#000800"),
-			PanelBackgroundTransparency = 0.9,
+			PanelBackgroundTransparency = 0,
 		},
 
 		Aurora = {
@@ -463,9 +524,9 @@ return function(WindUI, Creator)
 			Slider   = WindUI:Gradient({ ["0"] = { Color = Color3.fromHex("#00cc88"), Transparency = 0 }, ["100"] = { Color = Color3.fromHex("#0066ff"), Transparency = 0 } }, { Rotation = 45 }),
 			Checkbox = WindUI:Gradient({ ["0"] = { Color = Color3.fromHex("#00ffcc"), Transparency = 0 }, ["100"] = { Color = Color3.fromHex("#0044ff"), Transparency = 0 } }, { Rotation = 45 }),
 			ElementBackground             = Color3.fromHex("#000e18"),
-			ElementBackgroundTransparency = 0.3,
+			ElementBackgroundTransparency = 0,
 			PanelBackground             = Color3.fromHex("#000a12"),
-			PanelBackgroundTransparency = 0.9,
+			PanelBackgroundTransparency = 0,
 		},
 
 		Flame = {
@@ -494,9 +555,9 @@ return function(WindUI, Creator)
 			Slider   = WindUI:Gradient({ ["0"] = { Color = Color3.fromHex("#cc3300"), Transparency = 0 }, ["100"] = { Color = Color3.fromHex("#ff7700"), Transparency = 0 } }, { Rotation = 45 }),
 			Checkbox = WindUI:Gradient({ ["0"] = { Color = Color3.fromHex("#ff4400"), Transparency = 0 }, ["100"] = { Color = Color3.fromHex("#ff9900"), Transparency = 0 } }, { Rotation = 45 }),
 			ElementBackground             = Color3.fromHex("#1a0800"),
-			ElementBackgroundTransparency = 0.3,
+			ElementBackgroundTransparency = 0,
 			PanelBackground             = Color3.fromHex("#0d0400"),
-			PanelBackgroundTransparency = 0.9,
+			PanelBackgroundTransparency = 0,
 		},
 
 		Viper = {
@@ -523,9 +584,9 @@ return function(WindUI, Creator)
 			Slider   = WindUI:Gradient({ ["0"] = { Color = Color3.fromHex("#33aa00"), Transparency = 0 }, ["100"] = { Color = Color3.fromHex("#88dd00"), Transparency = 0 } }, { Rotation = 45 }),
 			Checkbox = WindUI:Gradient({ ["0"] = { Color = Color3.fromHex("#44cc00"), Transparency = 0 }, ["100"] = { Color = Color3.fromHex("#aaff00"), Transparency = 0 } }, { Rotation = 45 }),
 			ElementBackground             = Color3.fromHex("#050e00"),
-			ElementBackgroundTransparency = 0.3,
+			ElementBackgroundTransparency = 0,
 			PanelBackground             = Color3.fromHex("#030900"),
-			PanelBackgroundTransparency = 0.9,
+			PanelBackgroundTransparency = 0,
 		},
 
 		Tron = {
@@ -570,9 +631,9 @@ return function(WindUI, Creator)
 			Slider   = WindUI:Gradient({ ["0"] = { Color = Color3.fromHex("#cc8800"), Transparency = 0 }, ["100"] = { Color = Color3.fromHex("#ffaa00"), Transparency = 0 } }, { Rotation = 45 }),
 			Checkbox = WindUI:Gradient({ ["0"] = { Color = Color3.fromHex("#ffaa00"), Transparency = 0 }, ["100"] = { Color = Color3.fromHex("#ffdd44"), Transparency = 0 } }, { Rotation = 45 }),
 			ElementBackground             = Color3.fromHex("#1a1200"),
-			ElementBackgroundTransparency = 0.3,
+			ElementBackgroundTransparency = 0,
 			PanelBackground             = Color3.fromHex("#110e00"),
-			PanelBackgroundTransparency = 0.9,
+			PanelBackgroundTransparency = 0,
 		},
 
 		Grape = {
@@ -598,9 +659,9 @@ return function(WindUI, Creator)
 			Slider   = WindUI:Gradient({ ["0"] = { Color = Color3.fromHex("#7733cc"), Transparency = 0 }, ["100"] = { Color = Color3.fromHex("#9944ff"), Transparency = 0 } }, { Rotation = 45 }),
 			Checkbox = WindUI:Gradient({ ["0"] = { Color = Color3.fromHex("#9944ff"), Transparency = 0 }, ["100"] = { Color = Color3.fromHex("#cc66ff"), Transparency = 0 } }, { Rotation = 45 }),
 			ElementBackground             = Color3.fromHex("#14001f"),
-			ElementBackgroundTransparency = 0.3,
+			ElementBackgroundTransparency = 0,
 			PanelBackground             = Color3.fromHex("#0e0018"),
-			PanelBackgroundTransparency = 0.9,
+			PanelBackgroundTransparency = 0,
 		},
 
 		RoseGold = {
@@ -626,9 +687,9 @@ return function(WindUI, Creator)
 			Slider   = WindUI:Gradient({ ["0"] = { Color = Color3.fromHex("#bb4455"), Transparency = 0 }, ["100"] = { Color = Color3.fromHex("#cc6677"), Transparency = 0 } }, { Rotation = 45 }),
 			Checkbox = WindUI:Gradient({ ["0"] = { Color = Color3.fromHex("#cc5566"), Transparency = 0 }, ["100"] = { Color = Color3.fromHex("#dd7788"), Transparency = 0 } }, { Rotation = 45 }),
 			ElementBackground             = Color3.fromHex("#1c0c12"),
-			ElementBackgroundTransparency = 0.3,
+			ElementBackgroundTransparency = 0,
 			PanelBackground             = Color3.fromHex("#150810"),
-			PanelBackgroundTransparency = 0.9,
+			PanelBackgroundTransparency = 0,
 		},
 
 		NightSakura = {
@@ -654,9 +715,9 @@ return function(WindUI, Creator)
 			Slider   = WindUI:Gradient({ ["0"] = { Color = Color3.fromHex("#cc2266"), Transparency = 0 }, ["100"] = { Color = Color3.fromHex("#ee3377"), Transparency = 0 } }, { Rotation = 45 }),
 			Checkbox = WindUI:Gradient({ ["0"] = { Color = Color3.fromHex("#ee3377"), Transparency = 0 }, ["100"] = { Color = Color3.fromHex("#ff5599"), Transparency = 0 } }, { Rotation = 45 }),
 			ElementBackground             = Color3.fromHex("#12000e"),
-			ElementBackgroundTransparency = 0.3,
+			ElementBackgroundTransparency = 0,
 			PanelBackground             = Color3.fromHex("#0c000a"),
-			PanelBackgroundTransparency = 0.9,
+			PanelBackgroundTransparency = 0,
 		},
 
 		CottonCandy = {
@@ -679,10 +740,14 @@ return function(WindUI, Creator)
 			Slider   = WindUI:Gradient({ ["0"] = { Color = Color3.fromHex("#d946ef"), Transparency = 0 }, ["100"] = { Color = Color3.fromHex("#06b6d4"), Transparency = 0 } }, { Rotation = 45 }),
 			Checkbox = WindUI:Gradient({ ["0"] = { Color = Color3.fromHex("#e879f9"), Transparency = 0 }, ["100"] = { Color = Color3.fromHex("#22d3ee"), Transparency = 0 } }, { Rotation = 45 }),
 			ElementBackground             = Color3.fromHex("#2c2040"),
-			ElementBackgroundTransparency = 0.3,
+			ElementBackgroundTransparency = 0,
 			PanelBackground             = Color3.fromHex("#1e1530"),
-			PanelBackgroundTransparency = 0.9,
+			PanelBackgroundTransparency = 0,
 		},
+
+		-- ════════════════════════════════════════════════════════════════
+		--  DEVELOPER / EDITOR THEMES (flat, minimal)
+		-- ════════════════════════════════════════════════════════════════
 
 		TokyoNight = {
 			Name = "Tokyo Night",
@@ -828,6 +893,10 @@ return function(WindUI, Creator)
 			PanelBackgroundTransparency = 0,
 		},
 
+		-- ════════════════════════════════════════════════════════════════
+		--  LIGHT / PASTEL THEMES
+		-- ════════════════════════════════════════════════════════════════
+
 		Frost = {
 			Name = "Frost",
 			Background  = Color3.fromHex("#f0f0f5"),
@@ -958,6 +1027,10 @@ return function(WindUI, Creator)
 			PanelBackground             = Color3.fromHex("#d8f0e8"),
 			PanelBackgroundTransparency = 0,
 		},
+
+		-- ════════════════════════════════════════════════════════════════
+		--  DARK MINIMAL THEMES
+		-- ════════════════════════════════════════════════════════════════
 
 		Obsidian = {
 			Name = "Obsidian",
